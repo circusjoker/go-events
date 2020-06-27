@@ -1,7 +1,7 @@
 package events
 
 type ListenerContract interface {
-	handle(interface{}) error
+	Handle(interface{}) error
 }
 
 type DispatcherContract interface {
@@ -38,7 +38,7 @@ func (dispatcher *Dispatcher) Listen(event string, listeners []ListenerContract)
 func (dispatcher *Dispatcher) Dispatch(event string, payload interface{}) error {
 	if listeners, ok := dispatcher.listeners[event]; ok {
 		for _, listener := range listeners {
-			err := listener.handle(payload)
+			err := listener.Handle(payload)
 			if err != nil {
 				return err
 			}

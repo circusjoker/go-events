@@ -22,14 +22,14 @@ func TestDispatcher_listen(t *testing.T) {
 
 type Listener1 struct{}
 
-func (listener1 *Listener1) handle(payload interface{}) error {
+func (listener1 *Listener1) Handle(payload interface{}) error {
 	fmt.Println("listener1 got value", payload)
 	return nil
 }
 
 type Listener2 struct{}
 
-func (listener2 *Listener2) handle(payload interface{}) error {
+func (listener2 *Listener2) Handle(payload interface{}) error {
 	fmt.Println("listener2 got value", payload)
 	return nil
 }
