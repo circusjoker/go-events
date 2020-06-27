@@ -20,7 +20,7 @@ type Dispatcher struct {
 	listeners map[string][]ListenerContract
 }
 
-func NewDispatcher() *Dispatcher {
+func New() *Dispatcher {
 	listeners := make(map[string][]ListenerContract)
 	return &Dispatcher{
 		listeners: listeners,

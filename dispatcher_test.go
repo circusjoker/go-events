@@ -6,7 +6,7 @@ import (
 )
 
 func TestDispatcher_listen(t *testing.T) {
-	dispatcher := NewDispatcher()
+	dispatcher := New()
 	listener1 := &Listener1{}
 	listener2 := &Listener2{}
 	var listeners []ListenerContract
