@@ -15,14 +15,14 @@ func TestDispatcher_listen(t *testing.T) {
 
 type Listener1 struct{}
 
-func (listener1 *Listener1) Handle(event string, payload interface{}) error {
-	fmt.Println("event", event, ":", "listener1", payload)
+func (listener1 *Listener1) Handle(event string, args ...interface{}) error {
+	fmt.Println("event", event, ":", "listener1", args)
 	return nil
 }
 
 type Listener2 struct{}
 
-func (listener2 *Listener2) Handle(event string, payload interface{}) error {
-	fmt.Println("event", event, ":", "listener2", payload)
+func (listener2 *Listener2) Handle(event string, args ...interface{}) error {
+	fmt.Println("event", event, ":", "listener2", args)
 	return nil
 }
