@@ -7,17 +7,10 @@ import (
 
 func TestDispatcher_listen(t *testing.T) {
 	dispatcher := New()
-	listener1 := &Listener1{}
-	listener2 := &Listener2{}
-	var listeners []ListenerContract
-	listeners = append(listeners, listener1)
-	listeners = append(listeners, listener2)
-	dispatcher.Listen("test", listeners)
 
-	var payload interface{}
-	payload = "event test"
-	_ = dispatcher.Dispatch("test", payload)
+	dispatcher.Listen("test", []ListenerContract{&Listener1{}, &Listener2{}})
 
+	dispatcher.Dispatch("test", "event test")
 }
 
 type Listener1 struct{}
