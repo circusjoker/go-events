@@ -10,7 +10,7 @@ func TestDispatcher_listen(t *testing.T) {
 
 	dispatcher.Listen("test", []ListenerContract{&Listener1{}, &Listener2{}})
 
-	dispatcher.Dispatch("test", "event test")
+	dispatcher.Dispatch("test", "event test1" , "event test2")
 }
 
 type Listener1 struct{}

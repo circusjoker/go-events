@@ -39,7 +39,7 @@ func (dispatcher *Dispatcher) Listen(event string, listeners []ListenerContract)
 func (dispatcher *Dispatcher) Dispatch(event string, args ...interface{}) error {
 	if listeners, ok := dispatcher.listeners[event]; ok {
 		for _, listener := range listeners {
-			err := listener.Handle(event, args)
+			err := listener.Handle(event, args...)
 			if err != nil {
 				return err
 			}
